@@ -1,0 +1,61 @@
+site_name: docs.jjserver.sh
+site_url: https://docs.jjserver.sh
+not_in_nav: |
+  /index.md
+theme:
+  name: material
+  logo: img/jjlogo.png
+  favicon: img/favicon.ico
+  features:
+#    - navigation.tabs          # (Option B: to be re-added via header override, not this feature)
+#    - navigation.sections      # group nav by section
+#    - navigation.top           # back-to-top button
+    - navigation.instant       # fast SPA-style page loads
+    - search.suggest           # autocomplete in search
+    - search.highlight         # highlight matches on the page
+    - content.code.copy        # copy button on code blocks
+#    - toc.integrate            # table of contents in the left nav
+    - toc.follow
+  palette:
+    # Light/dark toggle — this is the built-in feature you wanted
+#    - scheme: default
+#      primary: red             # closest named color to your #6b2424
+#      toggle:
+#        icon: material/weather-night
+#        name: Switch to dark mode
+#    - scheme: slate
+#      primary: red
+#      toggle:
+#        icon: material/weather-sunny
+#        name: Switch to light mode
+    - scheme: slate
+      primary: black 
+      accent: indigo
+
+plugins:
+  - search
+  - tags                       # Obsidian `ta
+  - callouts
+
+markdown_extensions:
+  - admonition                 # note/warning
+  - toc:
+      permalink: true          # clickable an
+  - pymdownx.highlight         # better code
+  - pymdownx.superfences       # nested code/diagrams
+  - pymdownx.details           # collapsible blocks
+  - tables
+
+extra_css:
+  - css/custom.css             # your existing overrides still apply
+
+# Optional: an icon link in the footer (Material's equivalent of nav_links)
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://jjserver.sh
+      name: jjserver.sh
+    - icon: fontawesome/solid/globe
+      link: https://dcbikelanes.com
+      name: dcbikelanes.com
+  generator: false    # The bottom Made with Material message

@@ -1,0 +1,16 @@
+# Python virtualenv (not portable — see README)
+venv/
+
+# MkDocs build output (generated)
+site/
+docs/_site/
+
+# Obsidian vault config (local/editor-specific)
+.obsidian/
+
+# Editor swap/undo files
+*.un~
+*.swp
+
+# OS cruft
+.DS_Store
