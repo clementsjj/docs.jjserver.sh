@@ -4,6 +4,7 @@ venv/
 # MkDocs build output (generated)
 site/
 docs/_site/
+themes/
 
 # Obsidian vault config (local/editor-specific)
 .obsidian/
