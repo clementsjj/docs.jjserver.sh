@@ -1,6 +1,6 @@
 ---
 title: Useful HTML
-icon: material/code-block-tags
+icon: material/xml
 date: 2026-08-16
 ---
 
