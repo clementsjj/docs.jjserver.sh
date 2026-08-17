@@ -4,6 +4,7 @@ not_in_nav: |
   /index.md
 theme:
   name: material
+  custom_dir: overrides       # header.html override — adds extra.header_links to the top bar
   logo: img/jjlogo.png
   favicon: img/favicon.ico
   features:
@@ -33,6 +34,10 @@ theme:
       accent: indigo
 
 plugins:
+  - macros:                    # {{ latest_pages(n) }} — see main.py
+      render_by_default: false # opt-in only (render_macros: true in frontmatter) —
+                                # a docs site full of code samples WILL contain
+                                # literal {{ }} / {% %} / {# #} that aren't Jinja
   - search
   - tags                       # Obsidian `ta
   - callouts
@@ -51,11 +56,21 @@ extra_css:
 
 # Optional: an icon link in the footer (Material's equivalent of nav_links)
 extra:
-  social:
-    - icon: fontawesome/solid/globe
+  header_links:                # extra button(s) in the top header bar (see overrides/partials/header.html)
+    - icon: material/server-outline
       link: https://jjserver.sh
       name: jjserver.sh
-    - icon: fontawesome/solid/globe
+    - icon: material/book-open-blank-variant-outline
+      link: https://docs.jjserver.sh
+      name: docs.jjserver.sh
+    - icon: material/bicycle
+      link: https://dcbikelanes.com
+      name: dcbikelanes.com
+  social:
+    - icon: material/server-outline
+      link: https://jjserver.sh
+      name: jjserver.sh
+    - icon: material/bicycle-basket
       link: https://dcbikelanes.com
       name: dcbikelanes.com
   generator: false    # The bottom Made with Material message
