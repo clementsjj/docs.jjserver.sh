@@ -1,5 +1,8 @@
 ---
+title: How to add admonition from obisidian to mkdocs
+description: A little how-to showing how to add cool drop down boxes from obsidian to mkdocs
 date: 2026-07-08
+icon: material/language-markdown
 ---
 
 
