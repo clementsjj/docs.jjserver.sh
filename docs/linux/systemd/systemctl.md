@@ -1,6 +1,13 @@
+---
+title: Systemctl
+description: How to use systemctl to view and manipulate Linux systemd services
+icon: material/bash
+date: 2026-08-14
+---
+
 # systemctl
 
-## Mental model
+## Overview
 
 - systemd manages **units**. Most are `.service`, but also `.socket`, `.timer` (cron replacement), `.target` (runlevels), `.mount`, `.device`.
 - Two **independent** axes — this is the #1 confusion:
@@ -77,4 +84,4 @@
 
 ## See also
 
-- [[journalctl]] — read a unit's logs (`journalctl -u <unit>`)
+- [journalctl](../journalctl) — read a unit's logs (`journalctl -u <unit>`)
