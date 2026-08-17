@@ -21,3 +21,7 @@ Hopefully someone may find them useful someday.
 
 ## Cheatsheets
 - [Vim Cheatsheet](cheatsheets/vim.md)
+
+## Categories
+
+{{ all_tags() }}

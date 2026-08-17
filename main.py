@@ -2,11 +2,13 @@
 mkdocs-macros-plugin module for docs.jjserver.sh.
 https://mkdocs-macros-plugin.readthedocs.io/
 
-Provides two macros, usable in any .md page with `render_macros: true`
+Provides three macros, usable in any .md page with `render_macros: true`
 in its frontmatter:
 
 - {{ latest_pages(n) }}  — the n most recently dated pages (needs `date:`)
 - {{ featured_pages() }} — every page with `featured: true`, newest first
+- {{ all_tags() }}       — every tag in use, each linking to its section
+                            on the tags page (needs the `tags` plugin)
 """
 import datetime
 import os
@@ -15,6 +17,24 @@ import re
 import yaml
 
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?\n)---\s*\n", re.DOTALL)
+_SLUG_STRIP_RE = re.compile(r"[^\w\- ]")
+_SLUG_SPACE_RE = re.compile(r"[\s]+")
+
+
+def _slugify(tag):
+    """Match mkdocs-material's tags-page anchor for a given tag string.
+
+    Verified against this site's actual build output for every
+    currently-used tag (all lowercase, hyphenated already, so the
+    anchor is just "tag:" + the tag as-is). This mirrors the standard
+    lowercase/strip-punctuation/spaces-to-hyphens slugify pattern for
+    any *future* tag with spaces or capitals — re-check against a real
+    build if that ever looks wrong, same as it was worked out here.
+    """
+    slug = tag.strip().lower()
+    slug = _SLUG_STRIP_RE.sub("", slug)
+    slug = _SLUG_SPACE_RE.sub("-", slug)
+    return slug
 
 
 def _read_frontmatter(path):
@@ -100,3 +120,18 @@ def define_env(env):
                 line += f" — {description}"
             lines.append(line)
         return "\n".join(lines)
+
+    @env.macro
+    def all_tags():
+        counts = {}
+        for _, meta, _title, _url, _date_key in _all_pages(docs_dir):
+            for tag in meta.get("tags") or []:
+                counts[tag] = counts.get(tag, 0) + 1
+
+        if not counts:
+            return "*(no tags yet)*"
+
+        ordered = sorted(counts)  # alphabetical
+        return " · ".join(
+            f"[{tag}](/tags/#tag:{_slugify(tag)}) ({counts[tag]})" for tag in ordered
+        )
