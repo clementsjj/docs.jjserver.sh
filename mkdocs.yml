@@ -1,7 +1,7 @@
 site_name: docs.jjserver.sh
 site_url: https://docs.jjserver.sh
 not_in_nav: |
-  /index.md
+  /notes.md
 theme:
   name: material
   custom_dir: overrides       # header.html override — adds extra.header_links to the top bar
