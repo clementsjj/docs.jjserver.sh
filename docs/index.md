@@ -18,3 +18,6 @@ Hopefully someone may find them useful someday.
 ## Recently updated
 
 {{ latest_pages(5) }}
+
+## Cheatsheets
+- [Vim Cheatsheet](cheatsheets/vim.md)
