@@ -1,0 +1,27 @@
+/* docs.jjserver.sh — custom overrides for the custommill theme.
+   Loaded after the theme CSS, so rules here win by cascade.
+   Add your tweaks below. */
+
+.inner-page {
+	margin-top: 2%;
+}
+
+.md-nav__title {
+	color: #721766;
+}
+
+h2 {
+   color: #70596d;
+}
+
+h3 {
+   color: #6e3867;
+}
+
+h4 {
+   color: #8a327e;
+}
+
+h5 {
+   color: #721766;
+}
