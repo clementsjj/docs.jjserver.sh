@@ -10,7 +10,7 @@ Requires Debian's `python3-venv`. From the project root:
 ```bash
 python3 -m venv venv
 venv/bin/pip install --upgrade pip
-venv/bin/pip install mkdocs mkdocs-material mkdocs-callouts
+venv/bin/pip install -r requirements.txt
 ```
 
 This installs mkdocs 1.6.x (not the older apt-packaged `mkdocs` 1.4.2 — that one lacks
