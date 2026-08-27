@@ -5,6 +5,7 @@ draft: true
 tags:
   - linux
 description: ""
+icon: material/monitor-small
 ---
 
 # Display

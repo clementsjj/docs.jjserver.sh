@@ -7,7 +7,7 @@ icon: material/folder-home
 
 Welcome to jjserver.sh Docs page.
 
-Here you will find some helpful information and reference pages, primarily focused on Linux.
+Here you will find a brain dump, lessons learned collection of  reference pages, primarily focused on Linux.
 
 Hopefully someone may find them useful someday.
 
