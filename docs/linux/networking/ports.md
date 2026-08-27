@@ -9,7 +9,7 @@ date: 2026-08-01
 # Ports
 
 
-A **port** is a number (0–65535) tagging traffic so the kernel routes it to the right process. 
+A port is a number (0–65535) tagging traffic so the kernel routes it to the right process. 
 - IP → machine
 - Port → program
 
@@ -78,7 +78,7 @@ sudo ss -aun | grep -oE ':40[0-9]{3}' | tr -d ':' | sort -un | awk '{u[$1]=1} EN
 | `nc -zv host 22`                                     | is a TCP port open? (-z scan, -v) |
 | `nc -zvu host 53`                                    | UDP variant                       |
 | `curl -v telnet://host:5432`                         | quick TCP probe without nc        |
-| `timeout 2 bash -c '</dev/tcp/host/22' && echo open` | probe with no tools installed     |
+| `timeout 2 bash -c '< /dev/tcp/host/22' && echo open` | probe with no tools installed     |
 
 
 ## Common ports
